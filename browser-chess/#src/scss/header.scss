@@ -88,10 +88,11 @@
             top: 80px;
             left: -100%;
             text-align: center;
+            z-index: 1;
             .navbar__item {
                 display: block;
                 padding: 12px 0;
-                background: rgba(0, 0, 0, 0.5);
+                background: rgba(57, 53, 88, 0.9);
                 line-height: 30px;
                 .navbar__link {
                     font-size: 20px;
