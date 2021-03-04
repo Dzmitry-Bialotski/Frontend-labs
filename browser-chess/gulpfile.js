@@ -10,6 +10,7 @@ let path = {
         js: project_folder + "/js/",
         img: project_folder + "/img/",
         fonts: project_folder + "/fonts/",
+        root: project_folder
     },
     src: {
         html: [source_folder + "/html/*.html",
@@ -19,6 +20,7 @@ let path = {
         js: source_folder + "/js/script.js",
         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
         fonts: source_folder + "/fonts/*.ttf",
+        ico: source_folder + "/*.png"
     },
     watch: {
         html: source_folder + "/html/**/*.html",
@@ -44,6 +46,7 @@ let { src, dest } = require('gulp'),
     webp_html = require('gulp-webp-html'),
     ttf2woff = require('gulp-ttf2woff'),
     ttf2woff2 = require('gulp-ttf2woff2'),
+    wait = require('gulp-wait'),
     fonter = require('gulp-fonter');
 
 function html() {
@@ -55,6 +58,7 @@ function html() {
 
 function css() {
     return src(path.src.css)
+        .pipe(wait(200))
         .pipe(
             scss({
                 outputStyle: "expanded"
@@ -95,6 +99,8 @@ function js() {
 }
 
 function images() {
+    src(path.src.ico)
+        .pipe(dest(path.build.root))
     return src(path.src.img)
         .pipe(
             webp({
@@ -112,6 +118,7 @@ function images() {
             })
         )
         .pipe(dest(path.build.img))
+
 }
 
 function fonts() {

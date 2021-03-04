@@ -25,6 +25,7 @@
         "gulp-fonter": "^0.3.0",
         "gulp-ttf2woff": "^1.1.1",
         "gulp-ttf2woff2": "^4.0.1",
+        "gulp-wait": "0.0.2",
         "gulp-webp": "^4.0.1",
         "gulp-webp-html": "^1.0.2",
         "ttf2woff": "^2.0.2"

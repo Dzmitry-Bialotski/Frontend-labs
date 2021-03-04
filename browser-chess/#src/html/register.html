@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="dimasiandro">
-    <meta name="description" content="browser-chess Home page">
+    <meta name="description" content="browser-chess login page">
     <link rel="stylesheet" href="../css/style.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="../favicon.png" type="image/png">
-    <title>Home | browser-chess</title>
+    <title>Login | browser-chess</title>
 </head>
 
 <body class="content">
     @@include('_header.html')
     <main class="main">
-        <form class="login-form" method="post">
-
+        <form class="login-form register-box" method="get">
+            <h1>Register</h1>
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password_confirm" placeholder="Confirm password">
+            <input type="submit" value="Register">
         </form>
     </main>
     <script src="../js/script.min.js"></script>

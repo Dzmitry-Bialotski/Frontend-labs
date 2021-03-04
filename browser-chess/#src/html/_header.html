@@ -1,7 +1,19 @@
 <header>
-    <a href="#" id="logo">Logo</a>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">MainPage</a>
+    <nav class="navbar">
+        <div class="container">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+            <a href="#" class="navbar__logo-href">
+                <img src="../img/chess_logo.png" style="width: 180px; height: 80px;">
+            </a>
+            <ul class="navbar__items">
+                <li class="navbar__item"><a href="#" class="navbar__link">Home</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__link">Profile</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__link">Play</a></li>
+                <li class="navbar__item"><a href="#" class="navbar__link" id="auth_link">Login</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
