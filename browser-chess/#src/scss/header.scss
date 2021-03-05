@@ -37,11 +37,21 @@
             background: #1b9bff;
             transition: .5s;
         }
+        i {
+            margin-right: 4px;
+        }
     }
-    #auth_link {
+    #login_link {
         background: #44b84d;
         &:hover {
             background: #27692d;
+            transition: .5s;
+        }
+    }
+    #register_link {
+        background: #497cc9;
+        &:hover {
+            background: #175091;
             transition: .5s;
         }
     }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="dimasiandro">
+    <meta name="description" content="browser-chess Play page">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+
+    <!-- chessboard.js uses jquery as a dependency, I don`t use it. -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- font awesome for icons -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- chess.js-->
+    <script src="../js/chess.js"></script>
+    <!-- chessboard.js widget-->
+    <script src="../js/chessboard-1.0.0.js"></script>
+    <title>Play | browser-chess</title>
+</head>
+
+<body class="content">
+    @@include('_header.html')
+    <main class="main">
+        <section class="game-section">
+            <div id="myBoard" style="width: 300px;"></div>
+            <label>Status:</label>
+            <div id="status"></div>
+            <label>FEN:</label>
+            <div id="fen"></div>
+            <label>PGN:</label>
+            <div id="pgn"></div>
+        </section>
+        <section class="chat-section">
+        </section>
+    </main>
+    @@include('_footer.html')
+    <!-- <script src="../js/script.min.js"></script>-->
+    <script>
+        var board = null
+        var game = new Chess()
+        var $status = $('#status')
+        var $fen = $('#fen')
+        var $pgn = $('#pgn')
+
+        function onDragStart(source, piece, position, orientation) {
+            // do not pick up pieces if the game is over
+            if (game.game_over()) return false
+
+            // only pick up pieces for the side to move
+            if ((game.turn() === 'w' && piece.search(/^b/) !== -1) ||
+                (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
+                return false
+            }
+        }
+
+        function onDrop(source, target) {
+            // see if the move is legal
+            var move = game.move({
+                from: source,
+                to: target,
+                promotion: 'q' // NOTE: always promote to a queen for example simplicity
+            })
+
+            // illegal move
+            if (move === null) return 'snapback'
+
+            updateStatus()
+        }
+
+        // update the board position after the piece snap
+        // for castling, en passant, pawn promotion
+        function onSnapEnd() {
+            board.position(game.fen())
+        }
+
+        function updateStatus() {
+            var status = ''
+
+            var moveColor = 'White'
+            if (game.turn() === 'b') {
+                moveColor = 'Black'
+            }
+
+            // checkmate?
+            if (game.in_checkmate()) {
+                status = 'Game over, ' + moveColor + ' is in checkmate.'
+            }
+
+            // draw?
+            else if (game.in_draw()) {
+                status = 'Game over, drawn position'
+            }
+
+            // game still on
+            else {
+                status = moveColor + ' to move'
+
+                // check?
+                if (game.in_check()) {
+                    status += ', ' + moveColor + ' is in check'
+                }
+            }
+
+            $status.html(status)
+            $fen.html(game.fen())
+            $pgn.html(game.pgn())
+        }
+
+        var config = {
+            draggable: true,
+            position: 'start',
+            onDragStart: onDragStart,
+            onDrop: onDrop,
+            onSnapEnd: onSnapEnd
+        }
+        board = Chessboard('myBoard', config)
+
+        updateStatus()
+    </script>
+</body>
+
+</html>

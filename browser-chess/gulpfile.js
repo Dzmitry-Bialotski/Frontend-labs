@@ -17,7 +17,7 @@ let path = {
             "!" + source_folder + "/html/_*.html"
         ],
         css: source_folder + "/scss/style.scss",
-        js: source_folder + "/js/script.js",
+        js: source_folder + "/js/*.js",
         img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
         fonts: source_folder + "/fonts/*.ttf",
         ico: source_folder + "/*.png"
