@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-dark">
+
+<head>
+    <title id="title" data-title="browser-chess">browser-chess</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="dimasiandro">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="../favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="/layout/css/theme/variables.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/theme/theme-checkbox.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/carcass/header.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/carcass/main.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/carcass/footer.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/login-register.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/profile.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/play.css">
+    <link rel="stylesheet" type="text/css" href="/layout/css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="content">
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="#" class="navbar__logo-href">
+                    <img src="/layout/img/chess_logo.png" class="logo-img">
+                </a>
+                <ul class="navbar__items">
+                    <li class="navbar__item"><a href="#" class="navbar__link"><i class="fas fa-home"></i>Home</a></li>
+                    <li class="navbar__item"><a href="#" class="navbar__link"><i class="fas fa-user"></i>Profile</a></li>
+                    <li class="navbar__item"><a href="#" class="navbar__link"><i class="fas fa-chess-knight"></i>Play</a></li>
+                    <li class="navbar__item"><a href="#" class="navbar__link" id="login_link">Login</a></li>
+                    <li class="navbar__item"><a href="#" class="navbar__link" id="register_link">Register</a></li>
+                    <li class="navbar__item">
+                        <div class="theme-changer">
+                            <input type="checkbox" class="theme-input" id="theme-input" onclick="toggleTheme()">
+                            <label for="theme-input" class="theme-label">
+                                <i class="fas fa-sun"></i>
+                                <i class="fas fa-moon"></i>
+                                <div class="theme-ball"></div>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="room-section">
+            <div class="room-section__information"> Create new room and send room id to your friend or write your friends room id</div>
+            <div class="row"><button class="room-section__btn">Create room</button>
+                <span>Generated room id: </span> <span id="generated-room-id"> none</span>
+            </div>
+
+            <div class="row">
+                <input class="room-section__input-room" type="number"> </input>
+                <button class="room-section__btn">Enter the room</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <ul class="socials">
+                <li><a href="https://vk.com/dimasiandro" target="_blank"><i class="fab fa-vk" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/dimasiandro" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/dimasindro" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCqHOcdi2lD_1A2qEv2FGDIg" target="_blank"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/dmitriy-belotskiy-551a521b2/" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+            <h5> copyright &copy;2021 browser-chess written by <span> dimasiandro</span></h5>
+        </div>
+    </footer>
+    <script src="./../js/theme.js"></script>
+</body>
+
+</html>
