@@ -31,6 +31,9 @@ body {
     box-sizing: content-box;
 }
 
+
+/* this is the styles from chessboard.js!!!*/
+
 .square-55d63 {
     float: left;
     position: relative;
