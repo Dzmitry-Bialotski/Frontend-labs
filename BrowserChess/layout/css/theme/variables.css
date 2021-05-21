@@ -1,0 +1,25 @@
+.theme-light {
+    --bg-color: rgba(255, 255, 255, 0.3);
+    --text-color: rgb(0, 0, 0);
+    --toggle-color: rgb(0, 0, 0);
+    --ball-color: rgb(255, 255, 255);
+    --footer-bg-color: rgb(255, 255, 255);
+    --footer-text-color: rgb(0, 0, 0);
+    --footer-socials-clicked: rgb(150, 40, 95);
+    --header-bg-color: rgba(255, 255, 255, 0.5);
+    --header-link-color: rgb(0, 0, 0);
+    --header-bg-color-mobile: rgba(255, 255, 255, 0.5);
+}
+
+.theme-dark {
+    --bg-color: rgba(0, 0, 0, 0.3);
+    --text-color: rgb(255, 255, 255);
+    --toggle-color: rgb(110, 110, 110);
+    --ball-color: rgb(255, 255, 255);
+    --footer-bg-color: rgb(0, 0, 0);
+    --footer-text-color: rgb(255, 255, 255);
+    --footer-socials-clicked: aqua;
+    --header-bg-color: rgba(0, 0, 0, 0.5);
+    --header-link-color: rgb(255, 255, 255);
+    --header-bg-color-mobile: rgba(0, 0, 0, 0.5);
+}

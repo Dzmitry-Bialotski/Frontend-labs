@@ -1,0 +1,44 @@
+.theme-label {
+    background-color: var(--toggle-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    padding: 5px;
+    height: 28px;
+    width: 54px;
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+.theme-ball {
+    background-color: var(--ball-color);
+    border-radius: 50%;
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    top: 3px;
+    left: 4px;
+    bottom: 2px;
+    transition: transform 0.2s linear;
+}
+
+.theme-input {
+    opacity: 0;
+    position: absolute;
+}
+
+.theme-input:checked+.theme-label .theme-ball {
+    transform: translate(24px);
+}
+
+.theme-changer {
+    display: inline-block;
+}

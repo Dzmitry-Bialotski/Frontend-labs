@@ -1,0 +1,83 @@
+.hidden {
+    display: none;
+}
+
+.profile-container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.img-section {
+    width: 250px;
+    height: 300px;
+    margin: 10px;
+}
+
+.img-section__upload-btn {
+    margin: 3px 10px;
+    width: 230px;
+    height: 30px;
+    border-radius: 20px;
+    color: white;
+    background-color: blue;
+}
+
+.img-section__choose-btn {
+    margin: 3px 10px;
+    height: 30px;
+    width: 230px;
+}
+
+.user-information {
+    width: 600px;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.avatar-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50px;
+    border: white;
+}
+
+.username-input {
+    width: 300px;
+    height: 30px;
+    background-color: rgb(223, 223, 223);
+    border-radius: 15px;
+}
+
+.cnhg_username_btn {
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    color: white;
+    background-color: blue;
+}
+
+.row {
+    margin: 5px 0;
+}
+
+@media (max-width: 840px) {
+    .profile-container {
+        display: block;
+    }
+    .avatar-img {
+        width: 250px;
+        height: 250px;
+    }
+    .username-input {
+        width: 150px;
+    }
+    .profile-container {
+        width: 300px;
+    }
+    .user-information {
+        margin-top: 70px;
+    }
+}
